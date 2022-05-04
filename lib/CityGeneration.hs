@@ -5,4 +5,5 @@ import Distribution
 type Length = Integer
 
 generateCityName :: Length -> Distribution -> String
-generateCityName l d 
+
+generateCityName l d
