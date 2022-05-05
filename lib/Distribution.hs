@@ -3,6 +3,7 @@ module Distribution
     computeDistribution,
     toFile,
     fromFile,
+    cutWord
   )
 where
 
@@ -24,6 +25,7 @@ wrapWord = prependBeginCharacter . appendEndCharacter
 -- "word" : ["wo", "or", "rd"]
 -- "longword" : ["lon", "ong", "ngw", "gwo", "wor", "ord"]
 cutWord :: Int -> String -> [String]
+cutWord _ [] = []
 cutWord order word
   | length word <= order = [word]
   | otherwise = (take order word) : (cutWord order (tail word))
